@@ -1,0 +1,40 @@
+<mat-drawer-container>
+  <mat-drawer mode="side" [opened]="sideBarOpen">
+    <!-- <mat-drawer mode="side" opened="true"> -->
+    <app-sidenav></app-sidenav>
+  </mat-drawer>
+  <mat-drawer-content>
+    <app-header (toggleSidebarForMe)="sideBarToggler()"></app-header>
+    <div class="container-fluid page">
+      <div class="d-flex page__box p-3 mt-2">Dashboard</div>
+
+      <table class="table mt-4">
+        <thead>
+          <tr>
+            <th scope="col">Brand</th>
+            <th scope="col">Type</th>
+            <th scope="col">Matricule</th>
+
+            <th scope="col"></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+
+            <td>
+              <button type="button" class="btn btn-outline-primary mr-2">
+                Modifier
+              </button>
+              <button type="button" class="btn btn-outline-danger">
+                Supprimer
+              </button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </mat-drawer-content>
+</mat-drawer-container>

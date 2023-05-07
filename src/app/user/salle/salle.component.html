@@ -1,0 +1,121 @@
+<mat-drawer-container class="my-drawer-container">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid justify-content-between">
+          <!-- Left elements -->
+          <div class="d-flex">
+            <!-- Brand -->
+            <a class="navbar-brand me-2 mb-1 d-flex align-items-center" href="#">
+              <img
+                src="https://mdbootstrap.com/img/logo/mdb-transaprent-noshadows.webp"
+                height="20"
+                alt=""
+                loading="lazy"
+                style="margin-top: 2px;"
+              />
+            </a>
+      
+            <!-- Search form -->
+            <form class="input-group w-auto my-auto d-none d-sm-flex">
+              <input
+                autocomplete="off"
+                type="search"
+                class="form-control rounded"
+                placeholder="Search"
+                style="min-width: 125px;"
+              />
+              <span class="input-group-text border-0 d-none d-lg-flex"
+                ><i class="fas fa-search"></i
+              ></span>
+            </form>
+          </div>
+          <!-- Left elements -->
+      
+          <!-- Center elements -->
+          <ul class="navbar-nav flex-row d-none d-md-flex">
+            <li class="nav-item me-3 me-lg-1 active">
+              <a class="nav-link"  href="/user/films">
+               Film
+              </a>
+            </li>
+      
+            <li class="nav-item me-3 me-lg-1">
+              <a class="nav-link" href="/user/cinema">
+                Cinema
+              </a>
+            </li>
+      
+            <li class="nav-item me-3 me-lg-1">
+              <a class="nav-link"   href="user/salle">
+                salle  </a>
+            </li>
+      
+            <li class="nav-item me-3 me-lg-1">
+              <a class="nav-link" href="#">
+                logout
+              </a>
+            </li>
+      
+
+          </ul>
+    
+          <ul class="navbar-nav flex-row">
+            <li class="nav-item me-3 me-lg-1">
+              <a class="nav-link d-sm-flex align-items-sm-center" href="#">
+                <img
+                  src="https://mdbootstrap.com/img/new/avatars/1.webp"
+                  class="rounded-circle"
+                  height="22"
+                    
+                  alt=""
+                  loading="lazy"
+                />
+                <strong class="d-none d-sm-block ms-1">User</strong>
+              </a>
+            </li>
+           
+           
+           
+           
+           
+          </ul>
+          <!-- Right elements -->
+        </div>
+      </nav>
+    
+      <div class="container-fluid page">
+        <div class="d-flex page__box p-3 mt-2" style="color: black">
+          List of Films
+        </div>
+        <table class="table mt-4">
+          <thead>
+            <tr>
+              <th scope="col">numero salle</th>
+              <th scope="col">nom </th>
+              <th scope="col">nbr_place</th>
+              <th scope="col">id_cinema</th>
+              <th scope="col">Actions</th>
+
+
+    
+              <th scope="col"></th>
+            </tr>
+          </thead>
+          <tbody>
+            
+           <tr *ngFor="let item of salles">
+            
+            <td>{{item.id}}</td>
+            <td>{{item.nom}}</td>
+            <td>{{item.nb_places}}</td> 
+            <td>{{item.id_cinema}}</td> 
+              
+              <td> <button type="button" class="btn btn-outline-primary mr-2;" routerLink="/user/films" >show films</button>
+                <button type="button" class="btn btn-outline-danger" routerLink="/user/film_details">
+                 back               
+                </button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </mat-drawer-container>

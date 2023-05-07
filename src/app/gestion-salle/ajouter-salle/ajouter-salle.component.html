@@ -1,0 +1,39 @@
+<mat-drawer-container>
+    <mat-drawer mode="side" [opened]="sideBarOpen">
+      <!-- <mat-drawer mode="side" opened="true"> -->
+      <app-sidenav></app-sidenav>
+    </mat-drawer>
+    <mat-drawer-content>
+      <app-header (toggleSidebarForMe)="sideBarToggler()"></app-header>
+      <div class="container-fluid page">
+        <div class="d-flex page__box p-3 mt-2" style="color: azure">
+          Ajouter Salle
+        </div><br />
+      
+       
+        <form #salleForm="ngForm" (ngSubmit)="onSubmit()">
+            <label for="venue">Salle Name:</label>
+            <input type="text"  name="venue" [(ngModel)]="salle.nom" required><br><br>
+          
+            <label for="seats">Nombre de Places:</label>
+            <input type="number"  name="seats" [(ngModel)]="salle.nbPlaces" required><br><br>
+          
+            <label for="cinema">Cinema:</label>
+            <select name="cinema" [(ngModel)]="salle.cinema" required>
+                <option *ngFor="let cinema of cinemas" [value]="cinema.id">{{ cinema.name }}</option>
+            </select><br><br>
+          
+            
+            <button type="submit" class="button">
+              <span class="button__text">Ajouter</span>
+              <span class="button__icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" viewBox="0 0 24 24" stroke-width="2" stroke-linejoin="round" stroke-linecap="round" stroke="currentColor" height="24" fill="none" class="svg"><line y2="19" y1="5" x2="12" x1="12"></line><line y2="12" y1="12" x2="19" x1="5"></line></svg></span>
+            </button>
+          </form><br><br>
+             
+                 
+            
+         
+  
+</div>
+</mat-drawer-content>
+</mat-drawer-container>

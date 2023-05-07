@@ -1,0 +1,50 @@
+
+
+      
+
+<table class="table align-middle mb-0 bg-white">
+    <thead class="bg-light">
+      <tr>
+        <th>Title</th>
+        <th>genre</th>
+        <th>senariste</th>
+
+        <th>heure de projection</th>
+        <th>Duree</th>
+        <th>salle</th>
+        <th>tickets disponibles</th>
+
+
+      </tr>
+    </thead>
+    <tbody>
+      <tr  *ngFor="let item of films">
+        <td>
+         
+    {{item.titre}}
+         
+        </td>
+        <td>{{item.genre}}</td>
+        <td>{{item.acteur}}</td>
+        <td>{{item.heureProjection}}</td>
+        <td>{{item.duree}}</td>
+        <td>{{item.salle}} </td>
+        <td>
+              {{item.nbr_ticket}}
+            
+          </td>
+          <td>
+            <button type="button" class="btn btn-outline-primary mr-2;">
+                Reserver
+              </button>
+              <button type="button" class="btn btn-outline-danger" routerLink="/user/films">
+                Back               
+               </button>
+          </td>
+          
+      </tr>
+     
+      
+    </tbody>
+  </table> 
+
