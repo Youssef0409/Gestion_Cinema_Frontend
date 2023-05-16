@@ -32,11 +32,15 @@
                     <input name="duree" required="" placeholder="" type="text" class="input" [(ngModel)]="film.duree"> 
                     <span>Duree</span>
                 </label>
+                <label>
+                  <input name="prix" required="" placeholder="" type="number" class="input" [(ngModel)]="film.prix"> 
+                  <span>Prix</span>
+              </label>
             </div>  
              
             <label>
                 <p>Date de Projection</p>
-                <input name="dateProjection" required="" placeholder="" type="datetime-local" class="input" [(ngModel)]="film.heureProjection">
+                <input name="dateProjection" required="" placeholder="" type="date" class="input" [(ngModel)]="film.heureProjection">
                 
             </label>
             <p>Salle de Diffusion</p>

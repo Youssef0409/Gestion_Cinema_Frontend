@@ -1,0 +1,110 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container-fluid justify-content-between">
+      <!-- Brand -->
+      <a class="navbar-brand me-2 mb-1 d-flex align-items-center" >
+        <img src="./assets/logo1.svg" height="40" width="60" alt="" loading="lazy" style="margin-top: 2px;">
+      </a>
+      
+      <!-- Search form -->
+      <form class="input-group w-auto my-auto d-none d-sm-flex">
+        <input autocomplete="off" type="search" class="form-control rounded" placeholder="Search" style="min-width: 125px;">
+        <span class="input-group-text border-0 d-none d-lg-flex"><i class="fas fa-search"></i></span>
+      </form>
+  
+      <!-- Left elements -->
+      <ul class="navbar-nav flex-row d-none d-md-flex">
+  
+        <li class="nav-item me-3 me-lg-1" routerLinkActive="active">
+            <a class="nav-link" routerLink="/user/home-user">Home</a>
+          </li>
+        <li class="nav-item me-3 me-lg-1" routerLinkActive="active">
+          <a class="nav-link" routerLink="/user/films">Films</a>
+        </li>
+        <li class="nav-item me-3 me-lg-1" routerLinkActive="active">
+          <a class="nav-link" routerLink="/user/myticket">My Tickets</a>
+        </li>
+        <li class="nav-item me-3 me-lg-1" routerLinkActive="active">
+          <a class="nav-link" routerLink="/user/profile">Profile</a>
+        </li>
+        <li class="nav-item me-3 me-lg-1">
+          <a class="nav-link" (click)="logout()">Logout</a>
+        </li>
+      </ul>
+      
+      <!-- Right elements -->
+      <ul class="navbar-nav flex-row">
+        <li class="nav-item me-3 me-lg-1">
+          <a class="nav-link d-sm-flex align-items-sm-center" >
+            <img src="https://mdbootstrap.com/img/new/avatars/1.webp" class="rounded-circle" height="22" alt="" loading="lazy">
+            <strong class="d-none d-sm-block ms-1">{{nom}}</strong>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+<div class="container-xl px-4 mt-4">
+    <!-- Account page navigation-->
+  
+    <hr class="mt-0 mb-4">
+    <div class="row">
+        <div class="col-xl-4">
+            <!-- Profile picture card-->
+            <div class="card mb-4 mb-xl-0">
+                <div class="card-header">Profile Picture</div>
+                <div class="card-body text-center">
+                    <!-- Profile picture image-->
+                    <img class="img-account-profile rounded-circle mb-2" src="http://bootdey.com/img/Content/avatar/avatar1.png" alt="">
+                    <!-- Profile picture help block-->
+                    <div class="small font-italic text-muted mb-4">JPG or PNG no larger than 5 MB</div>
+                    <!-- Profile picture upload button-->
+                    <button class="btn btn-primary" type="button">Upload new image</button>
+                </div>
+            </div>
+        </div>
+        <div class="col-xl-8">
+            <!-- Account details card-->
+            <div class="card mb-4">
+                <div class="card-header">Account Details</div>
+                <div class="card-body">
+                    <form (ngSubmit)="onSubmit()">
+                        <!-- Form Group (username)-->
+                        
+                        <!-- Form Row-->
+                        <div class="row gx-3 mb-3">
+                            <!-- Form Group (first name)-->
+                            <div class="col-md-6">
+                                <label class="small mb-1" for="inputFirstName">Last name</label>
+                                <input class="form-control" id="inputFirstName" name ="nom "type="text" placeholder="Enter your last name" [(ngModel)]="user.nom">
+                            </div>
+                            <!-- Form Group (last name)-->
+                            <div class="col-md-6">
+                                <label class="small mb-1" for="inputLastName">First name</label>
+                                <input class="form-control" id="inputLastName" type="text" placeholder="Enter your first name" name="prenom" [(ngModel)]="user.prenom">
+                            </div>
+                        </div>
+                        <!-- Form Row        -->
+                        <div class="row gx-3 mb-3">
+                            <!-- Form Group (organization name)-->
+                            <div class="col-md-6">
+                                <label class="small mb-1" for="inputOrgName">Email</label>
+                                <input class="form-control" id="inputOrgName" type="text" placeholder="Enter your organization name" name="email" [(ngModel)]="user.email">
+                            </div>
+                            <!-- Form Group (location)-->
+                            <div class="col-md-6">
+                                <label class="small mb-1" for="inputLocation">password</label>
+                                <input class="form-control" id="inputLocation" type="password" placeholder="Enter your password" name="password" [(ngModel)]="user.password">
+                            </div>
+                        </div>
+                        <!-- Form Group (email address)-->
+                      
+                        <!-- Form Row-->
+                        
+                        <!-- Save changes button-->
+                        <button class="btn btn-primary" type="submit">Save changes</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

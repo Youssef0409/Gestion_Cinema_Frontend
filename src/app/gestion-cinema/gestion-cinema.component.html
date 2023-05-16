@@ -23,8 +23,8 @@
         <thead>
           <tr>
             <th scope="col">Name</th>
-            <th scope="col">Addresse</th>
-
+            <th scope="col">Adresse</th>
+            <th scope="col">Nombre de Salles</th>
             <th scope="col">Update</th>
             <th scope="col">Delete</th>
           </tr>
@@ -33,6 +33,7 @@
           <tr *ngFor="let cinema of cinemas">
             <td>{{ cinema.name }}</td>
             <td>{{ cinema.adress }}</td>
+            <td>{{ cinema.sallesCount }}</td>
 
             <td>
               
