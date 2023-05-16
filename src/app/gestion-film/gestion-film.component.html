@@ -27,7 +27,8 @@
             <th scope="col">createur</th>
             <th scope="col">Date Projection</th>
             <th scope="col">Duree</th>
-            <th scope="col">Nombre de tickets</th>
+            <th scope="col">Prix Ticket</th>
+            <th scope="col">Nbr de tickets</th>
             <th scope="col">Cinema</th>
             <th scope="col">Salle</th>
 
@@ -41,7 +42,9 @@
             <td>{{ film.genre}}</td>
             <td>{{ film.createur }}</td>
             
-            <td>{{ film.heureProjection}}</td><td>{{ film.duree }}</td>
+            <td>{{ film.heureProjection}}</td>
+            <td>{{ film.duree }}</td>
+            <td>{{ film.prix }} DT</td>
             <td>{{ film.nbr_ticket}}</td>
             <td>{{ film.salle.cinema.name}}</td>
             <td>{{ film.salle.nom}}</td>
@@ -71,5 +74,17 @@
 
 
     </div>
+
+
+
+
+
+
+
+
+
+
+
+    
   </mat-drawer-content>
 </mat-drawer-container>

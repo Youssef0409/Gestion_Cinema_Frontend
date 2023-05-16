@@ -28,6 +28,12 @@ import { FilmsComponent } from './user/films/films.component';
 import { SalleComponent } from './user/salle/salle.component';
 import { CinemaComponent } from './user/cinema/cinema.component';
 import { FilmsDetailsComponent } from './user/films-details/films-details.component';
+import { LoginComponent } from './login/login.component';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { HomeUserComponent } from './user/home-user/home-user.component';
+import { MyTicketsComponent } from './user/my-tickets/my-tickets.component';
+import { ProfileComponent } from './user/profile/profile.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -48,6 +54,11 @@ import { FilmsDetailsComponent } from './user/films-details/films-details.compon
     SalleComponent,
     CinemaComponent,
     FilmsDetailsComponent,
+    LoginComponent,
+    HomeUserComponent,
+    MyTicketsComponent,
+    ProfileComponent,
+    
   ],
   imports: [
     BrowserModule,
@@ -61,7 +72,9 @@ import { FilmsDetailsComponent } from './user/films-details/films-details.compon
     MatDividerModule,
     MatListModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    MatSnackBarModule,
+    
   
    
     

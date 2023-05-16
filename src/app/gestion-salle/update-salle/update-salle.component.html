@@ -20,7 +20,7 @@
           
             <label for="cinema">Cinema:</label>
             <select  class="form-select" aria-label="Default select example" id="cinema" name="cinema" [(ngModel)]="salle.cinema" required>
-                <option disabled selected>{{ salle.cinema.name }}</option>
+                
                 <option *ngFor="let cinema of cinemas" [value]="cinema.id">{{ cinema.name }}</option>
               </select><br><br>
 

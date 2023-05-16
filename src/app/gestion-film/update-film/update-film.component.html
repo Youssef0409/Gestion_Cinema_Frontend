@@ -1,1 +1,69 @@
-<p>update-film works!</p>
+<mat-drawer-container>
+    <mat-drawer mode="side" [opened]="sideBarOpen">
+      <!-- <mat-drawer mode="side" opened="true"> -->
+      <app-sidenav></app-sidenav>
+    </mat-drawer>
+    <mat-drawer-content>
+      <app-header (toggleSidebarForMe)="sideBarToggler()"></app-header>
+      <div class="container-fluid page">
+        <div class="d-flex page__box p-3 mt-2" style="color: azure">
+          Ajouter Film
+        </div><br />
+      
+       
+        <form class="form" #salleForm="ngForm" (ngSubmit)="onSubmit()">
+            <p class="title">Update Film </p>
+            
+                <div class="flex">
+                <label>
+                    <input name="titre" required="" placeholder="" type="text" class="input" [(ngModel)]="film.titre">
+                    <span>Titre</span>
+                </label>
+        
+                <label>
+                    <input name="createur" required="" placeholder="" type="text" class="input" [(ngModel)]="film.createur">
+                    <span>Createur</span>
+                </label>
+                <label>
+                    <input name="genre" required="" placeholder="" type="text" class="input" [(ngModel)]="film.genre">
+                    <span>Genre</span>
+                </label>
+                <label>
+                    <input name="duree" required="" placeholder="" type="text" class="input" [(ngModel)]="film.duree"> 
+                    <span>Duree</span>
+                </label>
+                <label>
+                  <input name="prix" required="" placeholder="" type="number" class="input" [(ngModel)]="film.prix"> 
+                  <span>Prix</span>
+              </label>
+              <label>
+                <input name="nbr_ticket" required="" placeholder="" type="number" class="input" [(ngModel)]="film.nbr_ticket"> 
+                <span>Nbr de tickets</span>
+            </label>
+            </div>  
+             
+            <label>
+                <p>Date de Projection</p>
+                <input name="dateProjection" required="" placeholder="" type="datetime-local" class="input" [(ngModel)]="film.heureProjection">
+                
+            </label>
+            <p>Salle de Diffusion</p>
+            <select name="salle" class="form-select" aria-label="Default select example" [(ngModel)]="film.salle" >
+                <option *ngFor="let salle of salles" [value]="salle.id">{{ salle.nom }}</option>
+                
+              </select>
+                
+            
+              
+            <button class="submit">Submit</button>
+            
+        </form>
+             
+                 
+            
+         
+  
+</div>
+</mat-drawer-content>
+</mat-drawer-container>
+

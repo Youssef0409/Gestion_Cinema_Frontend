@@ -15,8 +15,12 @@ import { FilmsComponent } from './user/films/films.component';
 import { FilmsDetailsComponent } from './user/films-details/films-details.component';
 import { CinemaComponent } from './user/cinema/cinema.component';
 import { SalleComponent } from './user/salle/salle.component';
+import { LoginComponent } from './login/login.component';
+import { HomeUserComponent } from './user/home-user/home-user.component';
+import { MyTicketsComponent } from './user/my-tickets/my-tickets.component';
+import { ProfileComponent } from './user/profile/profile.component';
 const routes: Routes = [
-  { path: '', redirectTo: 'home', pathMatch: 'full' },
+  { path: '', redirectTo: 'login', pathMatch: 'full' },
   { path: 'home', component: HomeComponent },
   { path: 'dashboard', component: DashboardComponent },
   { path: 'gestion-cinema', component: GestionCinemaComponent },
@@ -28,11 +32,15 @@ const routes: Routes = [
   { path: 'gestion-film', component: GestionFilmComponent },
   { path: 'ajouter-film', component: AjouterFilmComponent },
   { path: 'update-film/:id', component: UpdateFilmComponent },
-
+  { path: 'login', component: LoginComponent }, 
+  { path: 'user/home-user', component: HomeUserComponent  },
+  { path: 'user/myticket', component: MyTicketsComponent  },
+  { path: 'user/profile', component: ProfileComponent  },
+ 
 
   
   { path: 'user/films', component: FilmsComponent },
-  { path: 'user/film_details', component: FilmsDetailsComponent },
+  { path: 'user/film_details/:id', component: FilmsDetailsComponent },
   { path: 'user/cinema', component: CinemaComponent },
   { path: 'user/salle', component: SalleComponent },
 ];

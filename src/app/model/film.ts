@@ -6,6 +6,7 @@ export class Film {
     createur:string;
     nbr_ticket:number;
     duree:string;
+    prix:number;
     heureProjection:string;
     genre:string;
     salle:Salle;

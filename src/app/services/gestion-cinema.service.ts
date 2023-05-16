@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Cinema } from '../model/cinema';
 import { Observable } from 'rxjs';
+import { Salle } from '../model/salle';
 @Injectable({
   providedIn: 'root',
 })
@@ -26,5 +27,10 @@ export class GestionCinemaService {
 
   deleteCinema(id: number): Observable<any> {
     return this.httpClient.delete(`${this.baseURL}/cinema/delete/${id}`);
+  }
+
+  getSallesForCinema(id: number): Observable<number> {
+    const url = `${this.baseURL}/cinema/${id}/salles/count`;
+    return this.httpClient.get<number>(url);
   }
 }
